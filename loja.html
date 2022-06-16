@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Virtual</title>
+    <script>
+        function calcula(opr, linha) {
+            if (linha == '1') {
+                var qtdTenis1 = document.getElementById('qtdTenis1').innerHTML;
+                if (opr == "+") {
+                    qtdTenis1++;
+
+                    document.getElementById('qtdTenis1').innerHTML = qtdTenis1;
+                    var precoTenis1 = document.getElementById('precoTenis1').innerHTML;
+                    valorTenis1 = parseInt(precoTenis1) * parseInt(qtdTenis1)
+                    document.getElementById('total1').innerHTML = valorTenis1;
+                } else if (opr == "-") {
+                    if (qtdTenis1 > 0) {
+                        qtdTenis1--;
+                        document.getElementById('qtdTenis1').innerHTML = qtdTenis1;
+                        var precoTenis1 = document.getElementById('precoTenis1').innerHTML;
+                        valorTenis1 = parseInt(precoTenis1) * parseInt(qtdTenis1)
+                        document.getElementById('total1').innerHTML = valorTenis1;
+                    }
+                }
+            } else if (linha == '2') {
+                var qtdTenis2 = document.getElementById('qtdTenis2').innerHTML;
+                if (opr == "+") {
+                    qtdTenis2++;
+
+                    document.getElementById('qtdTenis2').innerHTML = qtdTenis2;
+                    var precoTenis2 = document.getElementById('precoTenis2').innerHTML;
+                    valorTenis2 = parseInt(precoTenis2) * parseInt(qtdTenis2)
+                    document.getElementById('total2').innerHTML = valorTenis2;
+                } else if (opr == "-") {
+                    if (qtdTenis2 > 0) {
+                        qtdTenis2--;
+                        document.getElementById('qtdTenis2').innerHTML = qtdTenis2;
+                        var precoTenis2 = document.getElementById('precoTenis2').innerHTML;
+                        valorTenis2 = parseInt(precoTenis2) * parseInt(qtdTenis2)
+                        document.getElementById('total2').innerHTML = valorTenis2;
+                    }
+                }
+            } else if (linha == '3') {
+                var qtdTenis3 = document.getElementById('qtdTenis3').innerHTML;
+                if (opr == "+") {
+                    qtdTenis3++;
+
+                    document.getElementById('qtdTenis3').innerHTML = qtdTenis3;
+                    var precoTenis3 = document.getElementById('precoTenis3').innerHTML;
+                    valorTenis3 = parseInt(precoTenis3) * parseInt(qtdTenis3)
+                    document.getElementById('total3').innerHTML = valorTenis3;
+                } else if (opr == "-") {
+                    if (qtdTenis3 > 0) {
+                        qtdTenis3--;
+                        document.getElementById('qtdTenis3').innerHTML = qtdTenis3;
+                        var precoTenis3 = document.getElementById('precoTenis3').innerHTML;
+                        valorTenis3 = parseInt(precoTenis3) * parseInt(qtdTenis3)
+                        document.getElementById('total3').innerHTML = valorTenis3;
+                    }
+                }
+            } else if (linha == '4') {
+                var qtdTenis4 = document.getElementById('qtdTenis4').innerHTML;
+                if (opr == "+") {
+                    qtdTenis4++;
+
+                    document.getElementById('qtdTenis4').innerHTML = qtdTenis4;
+                    var precoTenis4 = document.getElementById('precoTenis4').innerHTML;
+                    valorTenis4 = parseInt(precoTenis4) * parseInt(qtdTenis4)
+                    document.getElementById('total4').innerHTML = valorTenis4;
+                } else if (opr == "-") {
+                    if (qtdTenis4 > 0) {
+                        qtdTenis4--;
+                        document.getElementById('qtdTenis4').innerHTML = qtdTenis4;
+                        var precoTenis4 = document.getElementById('precoTenis4').innerHTML;
+                        valorTenis4 = parseInt(precoTenis4) * parseInt(qtdTenis4)
+                        document.getElementById('total4').innerHTML = valorTenis4;
+                    }
+                }
+            } else if (linha == '5') {
+                var qtdTenis5 = document.getElementById('qtdTenis5').innerHTML;
+                if (opr == "+") {
+                    qtdTenis5++;
+
+                    document.getElementById('qtdTenis5').innerHTML = qtdTenis5;
+                    var precoTenis5 = document.getElementById('precoTenis5').innerHTML;
+                    valorTenis5 = parseInt(precoTenis5) * parseInt(qtdTenis5)
+                    document.getElementById('total5').innerHTML = valorTenis5;
+                } else if (opr == "-") {
+                    if (qtdTenis5 > 0) {
+                        qtdTenis5--;
+                        document.getElementById('qtdTenis5').innerHTML = qtdTenis5;
+                        var precoTenis5 = document.getElementById('precoTenis5').innerHTML;
+                        valorTenis5 = parseInt(precoTenis5) * parseInt(qtdTenis5)
+                        document.getElementById('total5').innerHTML = valorTenis5;
+                    }
+                }
+            }
+            
+            
+            total()
+        }
+
+        function total() {
+            var total1 = document.getElementById('total1').innerHTML;
+            var total2 = document.getElementById('total2').innerHTML;
+            var total3 = document.getElementById('total3').innerHTML;
+            var total4 = document.getElementById('total4').innerHTML;
+            var total5 = document.getElementById('total5').innerHTML;
+            var valorTotalCompra = parseInt(total1) + parseInt(total2) + parseInt(total3) + parseInt(total4) + parseInt(total5);
+            document.getElementById('totalValor').innerHTML = valorTotalCompra;
+        }
+    </script>
+</head>
+<body>
+    <h1>Loja Virtual</h1>
+    <table>
+        <tr>
+            <td>Produto</td>
+            <td>Descrição</td>
+            <td>Preço</td>
+            <td>Quantidade</td>
+            <td></td>
+            <td></td>
+            <td>Total produto</td>
+        </tr>
+        <tr>
+            <td>Tênis Adidas Slep-on</td>
+            <td>Tênis azul espacial de elástico</td>
+            <td id="precoTenis1">250</td>
+            <td id="qtdTenis1">0</td>
+            <td><input type="button" value="+" onclick="calcula('+', '1')"></td>
+            <td><input type="button" value="-" onclick="calcula('-', '1')"></td>
+            <td id="total1">0</td>
+        </tr>
+        <tr>
+            <td>Tênis Nike Shock</td>
+            <td>Tênis Nike Shock anos 90</td>
+            <td id="precoTenis2">180</td>
+            <td id="qtdTenis2">0</td>
+            <td><input type="button" value="+" onclick="calcula('+', '2')"></td>
+            <td><input type="button" value="-" onclick="calcula('-', '2')"></td>
+            <td id="total2">0</td>
+        </tr>
+        <tr>
+            <td>Tênis Converse All Star </td>
+            <td>Tênis Converse All Star Chuck Taylor Verde</td>
+            <td id="precoTenis3">230</td>
+            <td id="qtdTenis3">0</td>
+            <td><input type="button" value="+" onclick="calcula('+', '3')"></td>
+            <td><input type="button" value="-" onclick="calcula('-', '3')"></td>
+            <td id="total3">0</td>
+        </tr>
+        <tr>
+            <td>Tênis Adidas Superstar </td>
+            <td>Tênis Adidas Superstar branco/preto</td>
+            <td id="precoTenis4">290</td>
+            <td id="qtdTenis4">0</td>
+            <td><input type="button" value="+" onclick="calcula('+', '4')"></td>
+            <td><input type="button" value="-" onclick="calcula('-', '4')"></td>
+            <td id="total4">0</td>
+        </tr>
+        <tr>
+            <td>Tênis Nike SB</td>
+            <td>Tênis Nike SB cinza claro</td>
+            <td id="precoTenis5">350</td>
+            <td id="qtdTenis5">0</td>
+            <td><input type="button" value="+" onclick="calcula('+', '5')"></td>
+            <td><input type="button" value="-" onclick="calcula('-', '5')"></td>
+            <td id="total5">0</td>
+        </tr>
+    </table>
+    <p>Total da compra: R$ <span id="totalValor">0</span></p>
+</body>
+</html>

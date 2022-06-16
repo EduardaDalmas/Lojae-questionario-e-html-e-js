@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Questionário</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <script>
+        function calcularNota() {
+            var certas = 0;
+
+            var opcaoP1  = document.getElementById("p1Correta").checked;
+            if (opcaoP1 == true) {
+                 certas = certas + 1
+            }
+
+            var opcaoP2  = document.getElementById("p2Correta").checked;
+            if (opcaoP2 == true) {
+                certas = certas + 1
+            }
+
+            var opcaoP3  = document.getElementById("p3Correta").checked;
+            if (opcaoP3 == true) {
+                certas = certas + 1
+            }
+
+            var opcaoP4  = document.getElementById("p4Correta").checked;
+            if (opcaoP4 == true) {
+                certas = certas + 1
+            }
+
+            var opcaoP5  = document.getElementById("p5Correta").checked;
+            if (opcaoP5 == true) {
+                certas = certas + 1
+            }
+
+            var nota = document.getElementById("nota").innerHTML = (certas * 20);
+
+            if (nota >= 80) {
+                document.getElementById("resultadoFinal").innerHTML = "Parabéns, você foi aprovado!"
+            } else {
+                document.getElementById("resultadoFinal").innerHTML = "Aguardamos você na recuperação!"
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>Questionário sobre Web</h1>
+    <h2>1. Qual comando HTML quebra uma linha?</h2>
+    <input type="radio" name="pergunta1">tr</p>
+    <input type="radio" name="pergunta1">rb</p>
+    <input type="radio" name="pergunta1">rgb</p>
+    <input type="radio" id="p1Correta" name="pergunta1">br</p>
+    <input type="radio" name="pergunta1">bt</p>
+
+    <h2>2. Como se declara o título de uma página?</h2>
+    <input type="radio" name="pergunta2">h5</p>
+    <input type="radio" name="pergunta2">p</p>
+    <input type="radio" name="pergunta2">a</p>
+    <input type="radio" name="pergunta2">span</p>
+    <input type="radio" id="p2Correta" name="pergunta2">h1</p>
+
+    <h2>3. Qual atributo configura a personalizaçao do HTML?</h2>
+    <input type="radio" name="pergunta3">color</p>
+    <input type="radio" name="pergunta3">font</p>
+    <input type="radio" id="p3Correta" name="pergunta3">style</p>
+    <input type="radio" name="pergunta3">text-align</p>
+    <input type="radio" name="pergunta3">padding</p>
+
+    <h2>4. Qual atributo no HTML é utilizado para descrever as imagens?</h2>
+    <input type="radio" id="p4Correta"  name="pergunta4">alt</p>
+    <input type="radio" name="pergunta4">desc</p>
+    <input type="radio" name="pergunta4">from</p>
+    <input type="radio" name="pergunta4">description</p>
+    <input type="radio" name="pergunta4">legend</p>
+
+    <h2>5. Quando utilizamos classes no HTML, isso nos possibilita:</h2>
+    <input type="radio" name="pergunta5">Não utilizar atributos em outros lugares</p>
+    <input type="radio" id="p5Correta" name="pergunta5">Utilizar os atributos em outros lugares</p>
+    <input type="radio" name="pergunta5">Limitar a quantidade de utilização</p>
+    <input type="radio" name="pergunta5">Funciona igual ao Id</p>
+    <input type="radio" name="pergunta5">A utilização de classes é indiferente pro código</p>
+
+    <input type="button" value="Concluir" onclick="calcularNota()">
+    <p>Nota Final: <span id="nota">?</span></p>
+    <p id="resultadoFinal">Aguardando resultado...</p>
+</body>
+</html>
